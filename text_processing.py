@@ -10,7 +10,6 @@ NLP에서 흔히하는 전처리는 소문자 변환, 앞뒤 필요없는 띄어
 이번 숙제에서는 텍스트 처리 방법을 파이썬으로 배워보겠습니다. 
 """
 
-
 def normalize(input_string):
     """
      인풋으로 받는 스트링에서 정규화된 스트링을 반환함
@@ -36,7 +35,7 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    check = re.compile('[a-zA-Z]+')          
+    check = re.compile('[a-zA-Z].+')          
     normalized_string = " ".join(check.findall(copy.deepcopy(input_string).lower()))
     return normalized_string
 
