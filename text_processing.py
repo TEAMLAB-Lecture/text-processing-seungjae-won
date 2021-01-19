@@ -35,7 +35,7 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    check = re.compile('[a-zA-Z].+')          
+    check = re.compile('[a-zA-Z.]+')          
     normalized_string = " ".join(check.findall(copy.deepcopy(input_string).lower()))
     return normalized_string
 
