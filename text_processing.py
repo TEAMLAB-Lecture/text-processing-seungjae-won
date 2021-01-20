@@ -2,11 +2,13 @@
 # Test Processing I   #
 #######################
 
+import copy
+import re
+
 """
 NLP에서 흔히하는 전처리는 소문자 변환, 앞뒤 필요없는 띄어쓰기를 제거하는 등의 텍스트 정규화 (text normalization)입니다. 
 이번 숙제에서는 텍스트 처리 방법을 파이썬으로 배워보겠습니다. 
 """
-
 
 def normalize(input_string):
     """
@@ -33,7 +35,8 @@ def normalize(input_string):
              >>> tp.normalize(input_string2)
              'extra space'
     """
-    normalized_string = None
+    check = re.compile("[^\s]+")    
+    normalized_string = " ".join(check.findall(copy.deepcopy(input_string).lower()))
     return normalized_string
 
 
@@ -58,5 +61,6 @@ def no_vowels(input_string):
             >>> tp.normalize(input_string2)
             ''W lv Pythn!'
     """
-    no_vowel_string = None
+    check = re.compile('[^aeiouAEIOU]')
+    no_vowel_string = "".join(check.findall(copy.deepcopy(input_string)))
     return no_vowel_string
